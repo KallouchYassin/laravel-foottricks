@@ -49,7 +49,7 @@
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                                 </div>
                                 @endif
-                                <form method="POST" action="{{ route('register') }}">
+                                <form method="POST" action="{{ route('login') }}">
                                     @csrf
 
                                     <p>Create your account</p>
@@ -89,7 +89,7 @@
 
                                     <div class="d-flex align-items-center justify-content-center pb-4">
                                         <p class="mb-0 me-2">Don't have an account?</p>
-                                        <button type="button" class="btn btn-outline-danger">Create new</button>
+                                        <button type="button" class="btn btn-outline-danger" onclick="window.location.href ='/register'">Create new</button>
                                     </div>
 
                                 </form>

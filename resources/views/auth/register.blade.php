@@ -152,7 +152,7 @@
 
                                 <div class="d-flex align-items-center justify-content-center pb-4">
                                     <p class="mb-0 me-2">Already have an account?</p>
-                                    <button type="button" class="btn btn-outline-danger">Log in</button>
+                                    <button type="button" class="btn btn-outline-danger" onclick="window.location.href ='/login'" >Log in</button>
                                 </div>
 
                             </form>

@@ -50,8 +50,17 @@
 
                 @if (Route::has('login'))
                 @auth
-                <li><a class="nav-link scrollto" href="{{ url('/home') }}">Home</a></li>
-
+                <li><a class="nav-link scrollto" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                <li class="nav-link scrollto">
+                    <a class="nav-link text-dark" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
                 @else
                 <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
 

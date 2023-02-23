@@ -22,15 +22,14 @@ Auth::routes();
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('user','fireauth');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('user','fireauth');
 
 // Route::get('/home/customer', [App\Http\Controllers\HomeController::class, 'customer'])->middleware('user','fireauth');
 
 Route::get('/email/verify', [App\Http\Controllers\Auth\ResetController::class, 'verify_email'])->name('verify')->middleware('fireauth');
 
 Route::post('login/{provider}/callback', 'Auth\LoginController@handleCallback');
-Route::get('dashboard', function () {
-    return view('backend.layouts.dashboard');
-})->name('dashboard');
+Route::get('/dashboard',  [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard')->middleware('user','fireauth');
 
 Route::resource('/home/profile', App\Http\Controllers\Auth\ProfileController::class)->middleware('user','fireauth');
 

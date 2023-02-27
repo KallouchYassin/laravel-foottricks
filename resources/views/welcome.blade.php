@@ -114,8 +114,8 @@
                 <h3 class="section-title">About Us</h3>
                 <span class="section-divider"></span>
                 <p class="section-description">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque<br>
-                    sunt in culpa qui officia deserunt mollit anim id est laborum
+                    Welcome to the website developed by Yassin Kallouch <br>
+                    for soccer teams to manage their teams and players!
                 </p>
             </div>
 
@@ -125,32 +125,23 @@
                 </div>
 
                 <div class="col-lg-6 content" data-aos="fade-left" dat-aos-delay="100">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elite storium paralate</h2>
-                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum.</h3>
+                    <h2>What your soccer team's management needs</h2>
+                    <h3>As a soccer enthusiast and a skilled web developer, I understand the importance of having an efficient system to manage teams and players. Whether you're a coach, a player, or a team manager, my website provides you with the necessary tools to streamline your soccer team's activities.</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        My website is designed with user-friendliness in mind. It's easy to navigate and offers a clean and modern interface. You don't need any technical skills to use it, and it can be accessed from any device with an internet connection
                     </p>
 
                     <ul>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <li><i class="bi bi-check-circle"></i> Team's calendar
+                        <li><i class="bi bi-check-circle"></i> Training schedules
+
                         </li>
-                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate
-                            velit.
-                        </li>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
-                            fugiat nulla pariatur.
+                        <li><i class="bi bi-check-circle"></i> Manage your team's calendar
                         </li>
                     </ul>
 
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Libero
-                        justo laoreet sit amet cursus sit amet dictum sit. Commodo sed egestas egestas fringilla
-                        phasellus faucibus scelerisque eleifend donec
+                        With my website, you can easily manage your team's calendar, attendance, events, and training schedules. You can create events and training sessions, set reminders, and monitor attendance. This ensures that your team stays organized and everyone is on the same page.
                     </p>
                 </div>
             </div>
@@ -181,27 +172,25 @@
 
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
                             <div class="icon"><i class="bi bi-briefcase"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate non provident clarida perendo.</p>
+                            <h4 class="title"><a href="">Chat</a></h4>
+                            <p class="description">Thanks to the Foottricks Android application, you can stay in touch with your team wherever you are.
+                                All team members are on Foottricks, everyone wins, coaches save precious time in management and organization. Players and parents have the right information at the right time
+                                They can increase the team atmosphere off the field (comments, photos, videos, etc.)</p>
                         </div>
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
                             <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat tarad limino ata noble dynala mark.</p>
+                            <h4 class="title"><a href="">Player info</a></h4>
+                            <p class="description">Footricks allows you to centralize and update all your member information, and access it from anywhere on your smartphone. Include all types of information (swimsuit number, allergies, etc.) Also the information related to the parents of the players. Update this information at any time.</p>
                         </div>
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up" dat-aos-delay="100">
                             <div class="icon"><i class="bi bi-binoculars"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur teleca starter sinode park ledo.</p>
+                            <h4 class="title"><a href="">Creat events</a></h4>
+                            <p class="description">Matches, practices, tournaments or dinners: Footricks allows you to create and share the team calendar to simplify the organization of any event. Make your team's schedule in just a few clicks. In addition, sharing important information (opponent, meeting place...) is also possible. Canceling or postponing an event is as easy as you made it. No more invitations by email, SMS, WhatsApp or Facebook - and comments in 4 different places.</p>
                         </div>
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bi bi-brightness-high"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum dinoun trade capsule.</p>
+                            <h4 class="title"><a href="">Managment</a></h4>
+                            <p class="description">For all matches, Foottricks allows you to choose starters and substitutes, and the best tactical plan. Place available players in the best tactical schedule. Use multiple compositions for the same match. Coaches decide who can see the composition (eg: only starters). Sharing on social networks is also possible with Footricks..</p>
                         </div>
                     </div>
 

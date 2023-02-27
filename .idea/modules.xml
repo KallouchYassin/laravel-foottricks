@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/laravel-with-firebase-auth-main.iml" filepath="$PROJECT_DIR$/.idea/laravel-with-firebase-auth-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/laravel-foottricks.iml" filepath="$PROJECT_DIR$/.idea/laravel-foottricks.iml" />
     </modules>
   </component>
 </project>

@@ -94,8 +94,10 @@ class RegisterController extends Controller
                 'firstname' => $request->input('firstname'),
                 'lastname' => $request->input('lastname'),
                 'email' => $request->input('email'),
+                'team_name' => $request->input('teamname'),
                 'imageUri'=>"https://firebasestorage.googleapis.com/v0/b/foottricks-5a2f5.appspot.com/o/profile.png?alt=media&token=51f4ddbd-c439-4f10-b754-551d6b6b10ab",
                 'role' => "coach",
+                'uuid'=>$user->uid,
             ];
             $postdata2 = [
                 'team_name' => $request->input('teamname'),

@@ -32,14 +32,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
+<style>
+    .py-4{
+        margin-top: 150px;
+    }
+</style>
 <body>
 
-<header id="header" class="fixed-top d-flex align-items-center header-transparent">
-    <div class="container d-flex justify-content-between align-items-center">
+<header id="header" class="fixed-top d-flex  header-transparent">
+    <div >
 
 
-        <nav id="navbar" class="navbar">
+        <nav id="navbar" >
             <ul>
 
                 @guest
@@ -57,7 +61,7 @@
                 @else
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="home/profile">{{ __('Profile') }}</a>
+                    <a class="nav-link text-dark" href="{{route('dashboard')}}">{{ __('Dashboard') }}</a>
                 </li>
 
                 <li class="nav-item">
@@ -93,4 +97,37 @@
     </div>
 </footer>
 </body>
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="asset/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="asset/backend/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="asset/backend/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="asset/backend/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="asset/backend/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="asset/backend/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="asset/backend/plugins/moment/moment.min.js"></script>
+<script src="asset/backend/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="asset/backend/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="asset/backend/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="asset/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="asset/backend/dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="asset/backend/dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="asset/backend/dist/js/pages/dashboard.js"></script>
 </html>

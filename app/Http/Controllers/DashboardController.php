@@ -82,7 +82,6 @@ class DashboardController extends Controller
             $user2 = $this->database->getReference("users/$user->uid")->getValue();
             $matchesList = [];
             $trainingsList = [];
-            $user2 = $this->database->getReference("users/$user->uid")->getValue();
             $matches = $this->database->getReference("matches")->getValue();
             $trainings = $this->database->getReference("trainings")->getValue();
             if (!is_null($matches)) {
@@ -100,6 +99,67 @@ class DashboardController extends Controller
                 }
             }
             return view('backend.layouts.create-event-matches', compact('user2'), compact('trainingsList', 'matchesList'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+    public function summonPlayers(Request $request,$id)
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+        try {
+            if($request->has('scored')){
+                $userRef = $this->database->getReference('matches/' . $id);
+
+                $userRef->update([
+                    'scored' => $request->input('scored'),
+                    'conceded' => $request->input('concede'),
+                    'red_cards' => $request->input('red'),
+                    'yellow_cards' => $request->input('yellow'),
+                    'fouls' => $request->input('fouls'),
+                    'shots' => $request->input('shots'),
+                    'shots_on_target' => $request->input('shots_on'),
+                    'possession' => $request->input('possession'),
+                    'passes' => $request->input('passes'),                ]);
+            }
+            else{
+
+                $checkedDays = $request->input('players', []);
+
+                // Output the checked days
+                $listDays = [];
+                foreach ($checkedDays as $day) {
+
+                    $convocatedPlayers= $this->database->getReference("users/$day")->getValue();
+
+                    $this->database->getReference("matches/$id/summon")->set($convocatedPlayers);
+
+                }
+            }
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+            return view("backend.layouts.calendar", compact('user2','trainingsList','matchesList'));
+
         } catch (\Exception $e) {
             return $e;
         }
@@ -197,11 +257,9 @@ class DashboardController extends Controller
             $user = app('firebase.auth')->getUser($uid);
 
             $user2 = $this->database->getReference("users/$user->uid")->getValue();
-            $uid = Session::get('uid');
-            $user = app('firebase.auth')->getUser($uid);
+
             $matchesList = [];
             $trainingsList = [];
-            $user2 = $this->database->getReference("users/$user->uid")->getValue();
             $matches = $this->database->getReference("matches")->getValue();
             $trainings = $this->database->getReference("trainings")->getValue();
             if (!is_null($matches)) {
@@ -223,6 +281,82 @@ class DashboardController extends Controller
         } catch (\Exception $e) {
             return $e;
         }
+
+    }
+
+    public function showDetailMatch($id)
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+        try {
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+
+
+            $match = $this->database->getReference("matches/$id")->getValue();
+
+            return view('backend.layouts.match-detail', compact('user2'), compact('trainingsList', 'matchesList', 'match'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+    public function showDetailTraining($id)
+    {
+        try {
+
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+
+            $training = $this->database->getReference("trainings/$id")->getValue();
+
+
+            return view('backend.layouts.training-detail', compact('user2'), compact('trainingsList', 'matchesList', 'training'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+        dd($id);
 
     }
 
@@ -381,7 +515,7 @@ class DashboardController extends Controller
 
 
                 $postdata = [
-                    'training_name' => $request->input('training_description'),
+                    'training_name' => $request->input('training_name'),
                     'training_description' => $request->input('training_description'),
                     'end_date' => Carbon::parse($request->input('end_date'))->toArray(),
                     'appointment_time_hour' => $hour,
@@ -414,7 +548,6 @@ class DashboardController extends Controller
                         };
                     }
                 }
-
 
                 return view('backend.layouts.create-event-training', compact('user2'));
             } catch (\Exception $e) {
@@ -460,4 +593,212 @@ class DashboardController extends Controller
         }
 
     }
+
+    public function showPlayers()
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+
+        try {
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+            $usersRef = $this->database->getReference('users');
+            $snapshot = $usersRef->getSnapshot();
+            $currentuid = $user2['uuid'];
+            foreach ($snapshot->getValue() as $userId => $userData) {
+                if ($userData['uuid'] !== $currentuid) {
+                    $users[$userId] = $userData;
+                }
+            }
+
+            return view('backend.layouts.player-stats', compact('user2'), compact('trainingsList', 'matchesList','users'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+    public function showPlayersDetail($id)
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+
+        try {
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $userSelected = $this->database->getReference("users/$id")->getValue();
+
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+            $months=['jan','feb','mar'];
+            $revenues=['1','2'];
+
+            return view('backend.layouts.player-detail', compact('user2'), compact('revenues','months','trainingsList', 'matchesList','userSelected'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+    public function chat()
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+
+        try {
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+
+
+            return view('backend.layouts.chat', compact('user2'), compact('trainingsList', 'matchesList'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+    public function teamStats()
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+
+        try {
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+
+            $usersRef = $this->database->getReference('users');
+            $snapshot = $usersRef->getSnapshot();
+            $users = [];
+            $currentuid = $user2['uuid'];
+            foreach ($snapshot->getValue() as $userId => $userData) {
+                if ($userData['uuid'] !== $currentuid) {
+                    $users[$userId] = $userData;
+                }
+            }
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+
+
+            return view('backend.layouts.team-stats', compact('user2'), compact('users','trainingsList', 'matchesList'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+    public function presence()
+    {
+        // FirebaseAuth.getInstance().getCurrentUser();
+
+        try {
+            $uid = Session::get('uid');
+            $user = app('firebase.auth')->getUser($uid);
+            $matchesList = [];
+            $trainingsList = [];
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+
+            $usersRef = $this->database->getReference('users');
+            $snapshot = $usersRef->getSnapshot();
+            $users = [];
+            $currentuid = $user2['uuid'];
+            foreach ($snapshot->getValue() as $userId => $userData) {
+                if ($userData['uuid'] !== $currentuid) {
+                    $users[$userId] = $userData;
+                }
+            }
+            $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $matches = $this->database->getReference("matches")->getValue();
+            $trainings = $this->database->getReference("trainings")->getValue();
+            if (!is_null($matches)) {
+                foreach ($matches as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($matchesList, $value);
+                    };
+                }
+            }
+            if (!is_null($trainings)) {
+                foreach ($trainings as $value) {
+                    if ($value["teamId"] == $user2["teamId"]) {
+                        array_push($trainingsList, $value);
+                    };
+                }
+            }
+
+
+            return view('backend.layouts.presence', compact('user2'), compact('users','trainingsList', 'matchesList'));
+        } catch (\Exception $e) {
+            return $e;
+        }
+
+    }
+
+
 }

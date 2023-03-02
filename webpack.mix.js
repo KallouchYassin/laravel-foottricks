@@ -13,3 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js')
+    .scripts([
+        'node_modules/chart.js/dist/chart.min.js',
+        // other dependencies
+    ], 'public/js/vendor.js');

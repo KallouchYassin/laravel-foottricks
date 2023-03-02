@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 use Kreait\Firebase\Auth as FirebaseAuth;
 use Kreait\Firebase\Database;
 use Kreait\Firebase\Exception\FirebaseException;
 
 use Illuminate\Validation\ValidationException;
+use Ramsey\Uuid\Uuid;
 use Session;
 
 class RegisterController extends Controller
@@ -56,9 +58,9 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $leagues=$this->database->getReference('leagues')->getValue();
+        $leagues = $this->database->getReference('leagues')->getValue();
 
-        return view('auth.register',compact('leagues'));
+        return view('auth.register', compact('leagues'));
     }
 
     function validator(array $data)
@@ -78,35 +80,49 @@ class RegisterController extends Controller
     {
 
         try {
+            $uuid = Str::random(8);
             $this->validator($request->all())->validate();
-            $first=$request->input('firstname');
-           $last= $request->input('lastname');
+            $first = $request->input('firstname');
+           $last = $request->input('lastname');
             $userProperties = [
                 'email' => $request->input('email'),
                 'emailVerified' => false,
                 'password' => $request->input('password'),
-                'displayName' => $first.' '.$last ,
+                'displayName' => $first . ' ' . $last,
                 'disabled' => false,
             ];
             $createdUser = $this->auth->createUser($userProperties);
             $user = $this->auth->getUserByEmail($request->input('email'));
-            $postdata =[
+            $postdata = [
                 'firstname' => $request->input('firstname'),
                 'lastname' => $request->input('lastname'),
                 'email' => $request->input('email'),
                 'team_name' => $request->input('teamname'),
-                'imageUri'=>"https://firebasestorage.googleapis.com/v0/b/foottricks-5a2f5.appspot.com/o/profile.png?alt=media&token=51f4ddbd-c439-4f10-b754-551d6b6b10ab",
+                'teamId' => $uuid,
+                'imageUri' => "https://firebasestorage.googleapis.com/v0/b/foottricks-5a2f5.appspot.com/o/profile.png?alt=media&token=51f4ddbd-c439-4f10-b754-551d6b6b10ab",
                 'role' => "coach",
-                'uuid'=>$user->uid,
+                'uuid' => $user->uid,
             ];
             $postdata2 = [
                 'team_name' => $request->input('teamname'),
                 'league' => $request->input('league'),
+                'uuid' => $uuid,
+                'team_coach' => $user,
+                'team_imageUri' => '0',
+                'team_goals' => '0',
+                'team_points' => '0',
+                'team_match_played' => '0',
+                'team_draws' => '0',
+                'team_wins' => '0',
+                'team_losses' => '0',
+                'team_goals_against' => '0',
+                'team_goals_for' => '0',
+                'team_goals_differential' => '0',
 
             ];
-            $postref2 =$this->database->getReference('teams')->push($postdata2);
+            $postref2 = $this->database->getReference("teams/$uuid")->set($postdata2);
 
-            $postref =$this->database->getReference("users/$user->uid")->set($postdata);
+            $postref = $this->database->getReference("users/$user->uid")->set($postdata);
 
          return redirect()->route('login');
        } catch (FirebaseException $e) {

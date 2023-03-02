@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Kreait\Firebase\Database;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Auth;
@@ -18,9 +19,13 @@ class ProfileController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function __construct()
+    protected $database;
+
+    public function __construct(Database $database)
   {
     $this->middleware('auth');
+      $this->database = $database;
+
   }
 
   public function index()
@@ -28,7 +33,9 @@ class ProfileController extends Controller
     //
     $uid = Session::get('uid');
     $user = app('firebase.auth')->getUser($uid);
-    return view('auth.profile',compact('user'));
+      $user2 = $this->database->getReference("users/$user->uid")->getValue();
+
+      return view('auth.profile',compact('user','user2'));
   }
 
   /**

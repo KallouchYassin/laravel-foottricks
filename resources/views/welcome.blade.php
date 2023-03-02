@@ -46,7 +46,9 @@
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#features">Features</a></li>
                 <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</li></a>
+
+
 
                 @if (Route::has('login'))
                 @auth
@@ -706,17 +708,17 @@
                     <div class="info">
                         <div>
                             <i class="bi bi-geo-alt"></i>
-                            <p>A108 Adam Street<br>New York, NY 535022</p>
+                            <p>Nijverheidskaai<br>Brussels, Anderlecht 1070</p>
                         </div>
 
                         <div>
                             <i class="bi bi-envelope"></i>
-                            <p>info@example.com</p>
+                            <p>yassin.kallouch@student.ehb.be</p>
                         </div>
 
                         <div>
                             <i class="bi bi-phone"></i>
-                            <p>+1 5589 55488 55s</p>
+                            <p>+32 489xxxxxx</p>
                         </div>
 
                     </div>

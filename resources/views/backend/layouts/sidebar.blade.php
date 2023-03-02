@@ -31,7 +31,7 @@
                 <img src="{{ $user2['imageUri'] }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ $user2['firstname'] }} {{ $user2['lastname'] }}</a>
+                <a href="../home/profile" class="d-block">{{ $user2['firstname'] }} {{ $user2['lastname'] }}</a>
             </div>
         </div>
 
@@ -67,7 +67,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="pages/kanban.html" class="nav-link">
+                    <a href="{{route('chat')}}"  class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>
                             Chat
@@ -84,19 +84,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
+                            <a href="{{route('showPlayers')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Player Stats</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
+                            <a href="{{route('teamStats')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Team Stats</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/mailbox/read-mail.html" class="nav-link">
+                            <a href="{{route('presence')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Presence</p>
                             </a>

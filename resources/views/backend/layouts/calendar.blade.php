@@ -412,7 +412,7 @@
 
                                 </ul>
                                 <div class="widget-49-meeting-action">
-                                    <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                                    <a href="{{route('showDetailTraining',['id'=>$item['uuid']])}}" class="btn btn-sm btn-flash-border-primary">View All</a>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +459,7 @@
                                     <li class="widget-49-meeting-item"><span><&lt;j[{{$item['championship_day']}}]>> : {{$item['match_side']}} </span></li>
                                 </ol>
                                 <div class="widget-49-meeting-action">
-                                    <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                                   <a href="{{route('showDetailMatch',['id'=>$item['uuid']])}}" class="btn btn-sm btn-flash-border-primary">View All</a>
                                 </div>
                             </div>
                         </div>

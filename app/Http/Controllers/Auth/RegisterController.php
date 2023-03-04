@@ -107,7 +107,7 @@ class RegisterController extends Controller
                 'team_name' => $request->input('teamname'),
                 'league' => $request->input('league'),
                 'uuid' => $uuid,
-                'team_coach' => $user,
+                'team_coach' => $user['email'],
                 'team_imageUri' => '0',
                 'team_goals' => '0',
                 'team_points' => '0',
@@ -120,6 +120,7 @@ class RegisterController extends Controller
                 'team_goals_differential' => '0',
 
             ];
+
             $postref2 = $this->database->getReference("teams/$uuid")->set($postdata2);
 
             $postref = $this->database->getReference("users/$user->uid")->set($postdata);

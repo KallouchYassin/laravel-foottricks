@@ -120,7 +120,7 @@
                         $sizep=sizeOf($match['summon']);
                         }
                         @endphp
-                        <h5 class="description-header">{{sizeOf($match['summon'])}}</h5>
+                        <h5 class="description-header">{{$sizep}}</h5>
                         <span class="description-text">Summon</span>
                     </div>
                     <!-- /.description-block -->
@@ -446,7 +446,7 @@
                         <!-- USERS LIST -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Covocated</h3>
+                                <h3 class="card-title">Available players</h3>
 
                                 <div class="card-tools">
                                     <span class="badge badge-danger">{{sizeof($match['users'])}}</span>
@@ -466,7 +466,6 @@
                                         <img src="{{$item['imageUri']}}" alt="User Image">
                                         <a class="users-list-name" href="#">{{$item['firstname']}}
                                             {{$item['lastname']}}</a>
-                                        <span class="users-list-date">Convocated</span>
                                     </li>
                                     @endforeach
 
@@ -512,12 +511,12 @@
                                 <tbody>
                                 @foreach ($match['users'] as $role=>$item)
                                 <tr>
-                                    <td><a href="#">{{ $item['firstname'] }} {{ $item['lastname'] }}</a></td>
-                                    <td>4</td>
+                                    <td><p>{{ $item['firstname'] }} {{ $item['lastname'] }}</p></td>
+                                    <td>0</td>
                                     <td>0</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#00a65a" data-height="20">
-                                            5
+                                            0
                                         </div>
                                     </td>
                                 </tr>

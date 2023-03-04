@@ -184,6 +184,8 @@ class DashboardController extends Controller
             $user = app('firebase.auth')->getUser($uid);
 
             $user2 = $this->database->getReference("users/$user->uid")->getValue();
+            $users = $this->database->getReference("users")->getValue();
+
             $validate = Validator::make($request->all(), [
                 'opponent' => 'required|min:5',
                 'ch_day' => 'required',
@@ -216,6 +218,9 @@ class DashboardController extends Controller
                 'match_place' => $request->input('location'),
                 'match_side' => $request->input('match_side'),
                 'teamId' => $user2['teamId'],
+                'team_name' => $user2['team_name'],
+                'users' => $users,
+
                 'uuid' => $uuid,
             ];
             $postref = $this->database->getReference("matches/$uuid")->set($postdata);

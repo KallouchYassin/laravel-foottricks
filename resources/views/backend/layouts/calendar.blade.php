@@ -1,11 +1,12 @@
 @extends('backend.layouts.app')
 @section('content')
 <style>
-    .titles{
-        color:  #1de099;
+    .titles {
+        color: #1de099;
         font-style: italic;
         font-weight: bold;
     }
+
     #fixed-button {
         position: fixed;
         bottom: 20px;
@@ -21,9 +22,10 @@
         border-radius: 30px;
         box-shadow: 2px 2px 4px rgba(0, 253, 116, 0.3);
     }
-    body{
+
+    body {
         background: #F4F7FD;
-        margin-top:20px;
+        margin-top: 20px;
     }
 
     .card-margin {
@@ -37,6 +39,7 @@
         -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
         -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
     }
+
     .card {
         position: relative;
         display: flex;
@@ -52,6 +55,7 @@
     .card .card-header.no-border {
         border: 0;
     }
+
     .card .card-header {
         background: none;
         padding: 0 0.9375rem;
@@ -60,6 +64,7 @@
         align-items: center;
         min-height: 50px;
     }
+
     .card-header:first-child {
         border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
     }
@@ -334,13 +339,13 @@
     }
 </style>
 <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    </div><!-- /.col -->
+                </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
@@ -369,10 +374,19 @@
                             <div class="widget-49">
                                 <div class="widget-49-title-wrapper">
                                     <div class="widget-49-date-primary">
+                                        @php
+                                        if(array_key_exists('date', $item["begin_date"])){
+                                        $tiemp=$item['begin_date']['date'];
+
+                                        }
+                                        else{
+                                        $tiemp= $item['begin_date']['day'];
+                                        }
+
+                                        @endphp
 
 
-
-                                        <span class="widget-49-date-day">{{$item['begin_date']['day']}}</span>
+                                        <span class="widget-49-date-day">{{$tiemp}}</span>
                                         @php
 
                                         if (array_key_exists('time', $item["begin_date"])) {
@@ -382,8 +396,10 @@
                                         }else if(array_key_exists('recurr_time_begin_hour', $item))
                                         {
                                         $month = date('M', mktime(0, 0, 0, $item["begin_date"]["month"], 1));
-                                        $end_date = $item["recurr_time_begin_hour"].":". $item["recurr_time_begin_minute"];
-                                        $begin_date =$item["recurr_time_end_hour"].":". $item["recurr_time_end_minute"];;
+                                        $end_date = $item["recurr_time_begin_hour"].":".
+                                        $item["recurr_time_begin_minute"];
+                                        $begin_date =$item["recurr_time_end_hour"].":".
+                                        $item["recurr_time_end_minute"];;
                                         }
                                         else {
                                         $month = date('M', mktime(0, 0, 0, $item["begin_date"]["month"], 1));
@@ -396,35 +412,36 @@
                                     </div>
                                     <div class="widget-49-meeting-info">
                                         <span class="widget-49-pro-title">Training of {{$item['begin_date']['day']}} {{$month}} {{$item['begin_date']['year']}}  </span>
-                                        <span class="widget-49-meeting-time">{{ $begin_date }} to {{ $end_date }} Hrs</span>
+                                        <span
+                                            class="widget-49-meeting-time">{{ $begin_date }} to {{ $end_date }} Hrs</span>
                                     </div>
                                 </div>
                                 <ul class="widget-49-meeting-points">
                                     @if(array_key_exists('recurr_time_begin_hour', $item))
-                                    <li class="widget-49-meeting-item"><span>Appointment time can change and will be disscused </span></li>
+                                    <li class="widget-49-meeting-item"><span>Appointment time can change and will be disscused </span>
+                                    </li>
 
                                     @else
-                                    <li class="widget-49-meeting-item"><span>Appointment Time at {{$item['appointment_time_hour']}}:{{$item['appointment_time_minute']}} </span></li>
+                                    <li class="widget-49-meeting-item">
+                                        <span>Appointment Time at {{$item['appointment_time_hour']}}:{{$item['appointment_time_minute']}} </span>
+                                    </li>
 
                                     @endif
-                                    <li class="widget-49-meeting-item"><span>Match place: {{$item['match_place']}} </span></li>
-                                    <li class="widget-49-meeting-item"><span>Description: {{$item['training_description']}} </span></li>
+                                    <li class="widget-49-meeting-item">
+                                        <span>Match place: {{$item['match_place']}} </span></li>
+                                    <li class="widget-49-meeting-item">
+                                        <span>Description: {{$item['training_description']}} </span></li>
 
                                 </ul>
                                 <div class="widget-49-meeting-action">
-                                    <a href="{{route('showDetailTraining',['id'=>$item['uuid']])}}" class="btn btn-sm btn-flash-border-primary">View All</a>
+                                    <a href="{{route('showDetailTraining',['id'=>$item['uuid']])}}"
+                                       class="btn btn-sm btn-flash-border-primary">View All</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     @endforeach
-
-
-
-
-
-
 
 
                 </div>
@@ -439,27 +456,50 @@
                             <div class="widget-49">
                                 <div class="widget-49-title-wrapper">
                                     <div class="widget-49-date-primary">
-                                        <span class="widget-49-date-day">{{$item['begin_date']['date']}}</span>
                                         @php
+                                        if(array_key_exists('date', $item["begin_date"])){
+                                        $tiemp=$item['begin_date']['date'];
+
+                                        }
+                                        else{
+                                        $tiemp= $item['begin_date']['day'];
+                                        }
+
+                                        @endphp
+                                        <span class="widget-49-date-day">{{$tiemp}}</span>
+                                        @php
+                                        if(array_key_exists('date', $item["begin_date"])){
                                         $month = date('M', mktime(0, 0, 0, $item["begin_date"]["month"], 1));
                                         $end_date = date('H:i', $item["begin_date"]["time"]);
                                         $begin_date = date('H:i', $item["begin_date"]["time"]);
+                                        }else{
+                                        $month = date('M', mktime(0, 0, 0, $item["begin_date"]["month"], 1));
+                                        $end_date = date('H:i', $item["begin_date"]["timestamp"]);
+                                        $begin_date = date('H:i', $item["begin_date"]["timestamp"]);
+                                        }
 
                                         @endphp
                                         <span class="widget-49-date-month">{{$month}}</span>
                                     </div>
                                     <div class="widget-49-meeting-info">
-                                        <span class="widget-49-pro-title">{{ $item['teamId']}} vs {{$item['opponent'] }}</span>
-                                        <span class="widget-49-meeting-time">{{ $begin_date }} to {{ $end_date }} Hrs</span>
+                                        <span
+                                            class="widget-49-pro-title">{{ $item['team_name']}} vs {{$item['opponent'] }}</span>
+                                        <span
+                                            class="widget-49-meeting-time">{{ $begin_date }} to {{ $end_date }} Hrs</span>
                                     </div>
                                 </div>
                                 <ol class="widget-49-meeting-points">
-                                    <li class="widget-49-meeting-item"><span>Appointment Time at {{$item['appointment_time_hour']}}:{{$item['appointment_time_minute']}}</span></li>
-                                    <li class="widget-49-meeting-item"><span>Match place: {{$item['match_place']}}</span></li>
-                                    <li class="widget-49-meeting-item"><span><&lt;j[{{$item['championship_day']}}]>> : {{$item['match_side']}} </span></li>
+                                    <li class="widget-49-meeting-item">
+                                        <span>Appointment Time at {{$item['appointment_time_hour']}}:{{$item['appointment_time_minute']}}</span>
+                                    </li>
+                                    <li class="widget-49-meeting-item">
+                                        <span>Match place: {{$item['match_place']}}</span></li>
+                                    <li class="widget-49-meeting-item"><span><&lt;j[{{$item['championship_day']}}]>> : {{$item['match_side']}} </span>
+                                    </li>
                                 </ol>
                                 <div class="widget-49-meeting-action">
-                                   <a href="{{route('showDetailMatch',['id'=>$item['uuid']])}}" class="btn btn-sm btn-flash-border-primary">View All</a>
+                                    <a href="{{route('showDetailMatch',['id'=>$item['uuid']])}}"
+                                       class="btn btn-sm btn-flash-border-primary">View All</a>
                                 </div>
                             </div>
                         </div>
@@ -473,10 +513,11 @@
         </div><!-- /.container-fluid -->
     </div>
 
-        <button type="button" id="fixed-button" data-toggle="popover" data-placement="left" data-html="true" data-content='
+    <button type="button" id="fixed-button" data-toggle="popover" data-placement="left" data-html="true" data-content='
    <a href="{{ route("create-event-training") }}">Training</a><br>
    <a href="{{ route("create-event-matches") }}">Matches</a>
-'>+</button>
+'>+
+    </button>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

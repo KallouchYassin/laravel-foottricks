@@ -46,8 +46,8 @@
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#features">Features</a></li>
                 <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</li></a>
-
+                <li><a class="nav-link scrollto" href="#contact">Contact</li>
+                </a>
 
 
                 @if (Route::has('login'))
@@ -73,10 +73,10 @@
                 @endif
                 @endauth
 
-    @endif
-    </ul>
-    <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+                @endif
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->
 
@@ -128,9 +128,14 @@
 
                 <div class="col-lg-6 content" data-aos="fade-left" dat-aos-delay="100">
                     <h2>What your soccer team's management needs</h2>
-                    <h3>As a soccer enthusiast and a skilled web developer, I understand the importance of having an efficient system to manage teams and players. Whether you're a coach, a player, or a team manager, my website provides you with the necessary tools to streamline your soccer team's activities.</h3>
+                    <h3>As a soccer enthusiast and a skilled web developer, I understand the importance of having an
+                        efficient system to manage teams and players. Whether you're a coach, a player, or a team
+                        manager, my website provides you with the necessary tools to streamline your soccer team's
+                        activities.</h3>
                     <p>
-                        My website is designed with user-friendliness in mind. It's easy to navigate and offers a clean and modern interface. You don't need any technical skills to use it, and it can be accessed from any device with an internet connection
+                        My website is designed with user-friendliness in mind. It's easy to navigate and offers a clean
+                        and modern interface. You don't need any technical skills to use it, and it can be accessed from
+                        any device with an internet connection
                     </p>
 
                     <ul>
@@ -143,7 +148,9 @@
                     </ul>
 
                     <p>
-                        With my website, you can easily manage your team's calendar, attendance, events, and training schedules. You can create events and training sessions, set reminders, and monitor attendance. This ensures that your team stays organized and everyone is on the same page.
+                        With my website, you can easily manage your team's calendar, attendance, events, and training
+                        schedules. You can create events and training sessions, set reminders, and monitor attendance.
+                        This ensures that your team stays organized and everyone is on the same page.
                     </p>
                 </div>
             </div>
@@ -175,24 +182,39 @@
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
                             <div class="icon"><i class="bi bi-briefcase"></i></div>
                             <h4 class="title"><a href="">Chat</a></h4>
-                            <p class="description">Thanks to the Foottricks Android application, you can stay in touch with your team wherever you are.
-                                All team members are on Foottricks, everyone wins, coaches save precious time in management and organization. Players and parents have the right information at the right time
+                            <p class="description">Thanks to the Foottricks Android application, you can stay in touch
+                                with your team wherever you are.
+                                All team members are on Foottricks, everyone wins, coaches save precious time in
+                                management and organization. Players and parents have the right information at the right
+                                time
                                 They can increase the team atmosphere off the field (comments, photos, videos, etc.)</p>
                         </div>
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up">
                             <div class="icon"><i class="bi bi-card-checklist"></i></div>
                             <h4 class="title"><a href="">Player info</a></h4>
-                            <p class="description">Footricks allows you to centralize and update all your member information, and access it from anywhere on your smartphone. Include all types of information (swimsuit number, allergies, etc.) Also the information related to the parents of the players. Update this information at any time.</p>
+                            <p class="description">Footricks allows you to centralize and update all your member
+                                information, and access it from anywhere on your smartphone. Include all types of
+                                information (swimsuit number, allergies, etc.) Also the information related to the
+                                parents of the players. Update this information at any time.</p>
                         </div>
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up" dat-aos-delay="100">
                             <div class="icon"><i class="bi bi-binoculars"></i></div>
                             <h4 class="title"><a href="">Creat events</a></h4>
-                            <p class="description">Matches, practices, tournaments or dinners: Footricks allows you to create and share the team calendar to simplify the organization of any event. Make your team's schedule in just a few clicks. In addition, sharing important information (opponent, meeting place...) is also possible. Canceling or postponing an event is as easy as you made it. No more invitations by email, SMS, WhatsApp or Facebook - and comments in 4 different places.</p>
+                            <p class="description">Matches, practices, tournaments or dinners: Footricks allows you to
+                                create and share the team calendar to simplify the organization of any event. Make your
+                                team's schedule in just a few clicks. In addition, sharing important information
+                                (opponent, meeting place...) is also possible. Canceling or postponing an event is as
+                                easy as you made it. No more invitations by email, SMS, WhatsApp or Facebook - and
+                                comments in 4 different places.</p>
                         </div>
                         <div class="col-lg-6 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bi bi-brightness-high"></i></div>
                             <h4 class="title"><a href="">Managment</a></h4>
-                            <p class="description">For all matches, Foottricks allows you to choose starters and substitutes, and the best tactical plan. Place available players in the best tactical schedule. Use multiple compositions for the same match. Coaches decide who can see the composition (eg: only starters). Sharing on social networks is also possible with Footricks..</p>
+                            <p class="description">For all matches, Foottricks allows you to choose starters and
+                                substitutes, and the best tactical plan. Place available players in the best tactical
+                                schedule. Use multiple compositions for the same match. Coaches decide who can see the
+                                composition (eg: only starters). Sharing on social networks is also possible with
+                                Footricks..</p>
                         </div>
                     </div>
 
@@ -214,15 +236,20 @@
                         <img class="advanced-feature-img-right wow fadeInRight" src="assets/img/advanced-feature-1.jpg"
                              alt="">
                         <div>
-                            <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
-                            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum.</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                deserunt mollit anim id est laborum.</p>
+                            <h2>Football is a popular sport around the world, with millions of players and fans alike.
+                            </h2>
+                            <h3> Football teams require a lot of coordination, planning, and management to operate
+                                successfully.</h3>
+                            <p> However, managing a football team can be challenging, especially when
+                                dealing with large groups of players, coaches, and team managers. Fortunately,
+                                technology has provided solutions to streamline and improve football team
+                                management.</p>
+                            <p>This app represents a comprehensive football team management application that aims to
+                                revolutionize the way football teams operate. Overview of the Application: The football
+                                team management application is a web-based and mobile-based platform that provides
+                                coaches, players, and team managers with an all-in-one solution for managing their
+                                teams. The web application is designed for coaches and team managers, while the Android
+                                app is designed for players and coaches. </p>
                         </div>
                     </div>
                 </div>
@@ -235,16 +262,22 @@
                     <div class="col-12">
                         <img class="advanced-feature-img-left" src="assets/img/advanced-feature-2.jpg" alt="">
                         <div>
-                            <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
+                            <h2>The application caters to the needs of various users involved in football team
+                                management. </h2>
                             <i class="bi bi-calendar4-week"></i>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <p> As a coach, I want to be able to manage my team's schedule, including matches, training
+                                sessions, and events, so that I can plan and prepare efficiently.
+                            </p>
                             <i class="bi bi-bar-chart"></i>
-                            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                                aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                            <p> As a team manager, I want to be able to monitor the attendance of players during
+                                training sessions, matches, and events, so that I can ensure the team's participation
+                                and engagement.
+                            </p>
                             <i class="bi bi-brightness-high"></i>
-                            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                                aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                            <p> As a player, I want to be able to track my progress and performance through the
+                                application's statistics and graphs, so that I can improve my skills and contribute more
+                                effectively to the team.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -258,16 +291,18 @@
                         <img class="advanced-feature-img-right wow fadeInRight" src="assets/img/advanced-feature-3.jpg"
                              alt="">
                         <div>
-                            <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
-                            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum.</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            <h2>Statistics with Graphs:
+
+                            </h2>
+                            <h3> The statistics feature of the application provides coaches and players with a way to
+                                track their team's performance over time. T
+                            </h3>
+                            <p>his feature includes the ability to view
+                                statistics such as goals scored, assists, and yellow/red cards, and view them in graph
+                                format. </p>
                             <i class="bi bi-binoculars"></i>
-                            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                deserunt mollit anim id est laborum.</p>
+                            <p>This feature can be useful for identifying areas of strength and weakness, and
+                                for setting goals for improvement.</p>
                         </div>
                     </div>
                 </div>
@@ -280,13 +315,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 text-center text-lg-start">
-                    <h3 class="cta-title">Call To Action</h3>
-                    <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
+                    <h3 class="cta-title">Download the android app now on the google play store!</h3>
+                    <p class="cta-text"> Try the app</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="#">Call To Action</a>
+                    <a class="cta-btn align-middle" href="https://play.google.com/store/games">Download now</a>
                 </div>
             </div>
 
@@ -300,8 +333,8 @@
             <div class="section-header">
                 <h3 class="section-title">More Features</h3>
                 <span class="section-divider"></span>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque</p>
+                <p class="section-description">Here are some features that the app can provide you depending on your
+                    plan</p>
             </div>
 
             <div class="row gy-4">
@@ -309,36 +342,60 @@
                 <div class="col-lg-6">
                     <div class="box">
                         <div class="icon"><i class="bi bi-briefcase"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                            excepturi sint occaecati cupiditate non provident etiro rabeta lingo.</p>
+                        <h4 class="title"><a href="">Training Management</a></h4>
+                        <p class="description">
+                            The training management feature of the application provides coaches and team managers with a
+                            way to plan and organize training sessions. This feature includes the ability to create
+                            training plans, add exercises, and track progress over time. This feature can be useful for
+                            ensuring that training sessions are well-structured and productive, and for ensuring that
+                            players are developing their skills effectively.
+                        </p>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="box">
                         <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat tarad limino ata nodera clas.</p>
+                        <h4 class="title"><a href="">Attendance Tracking</a></h4>
+                        <p class="description">
+                            The attendance tracking feature of the application provides coaches and team managers with a
+                            way to monitor the participation of players in training sessions, matches, and team events.
+                            This feature includes the ability to mark players as present, absent, or late, and to view
+                            attendance records over time. This feature can be useful for identifying patterns of
+                            behavior among players and for addressing attendance issues.
+                        </p>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="box">
                         <div class="icon"><i class="bi bi-bar-chart"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur trinige zareta lobur trade.</p>
+                        <h4 class="title"><a href="">>Statistics with Graphs</a></h4>
+                        <p class="description">
+                            The statistics feature of the application provides coaches and players with a way to track
+                            their team's performance over time. This feature includes the ability to view statistics
+                            such as goals scored, assists, and yellow/red cards, and view them in graph format. This
+                            feature can be useful for identifying areas of strength and weakness, and for setting goals
+                            for improvement.
+                        </p>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="box">
                         <div class="icon"><i class="bi bi-binoculars"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum rideta zanox satirente madera</p>
+                        <h4 class="title"><a href="">Chat</a></h4>
+                        <p class="description">
+                            The chat feature of the application allows coaches, players, and team managers to
+                            communicate with each other instantly. This feature is particularly useful for discussing
+                            last-minute changes to training schedules or match arrangements. The chat feature can be
+                            accessed through both the web application and the Android app, allowing users to communicate
+                            on the go. Calendar: The calendar feature of the application provides coaches, players, and
+                            team managers with a centralized location for managing their team's schedule. This feature
+                            includes the ability to add events such as matches, training sessions, and team meetings,
+                            and view them in a calendar format. The calendar can be customized to suit the needs of each
+                            team, and notifications can be set up to remind users of upcoming events.
+                        </p>
                     </div>
                 </div>
 
@@ -351,6 +408,11 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row">
+                <div class="section-header">
+                    <h3 class="section-title">Possible Clients</h3>
+                    <span class="section-divider"></span>
+                    <p class="section-description">here are future or possible clients we aim </p>
+                </div>
 
                 <div class="col-md-2">
                     <img src="assets/img/clients/client-1.png" alt="">
@@ -387,37 +449,42 @@
             <div class="section-header">
                 <h3 class="section-title">Pricing</h3>
                 <span class="section-divider"></span>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque</p>
+                <p class="section-description">three different service solutions for your football team management </p>
             </div>
 
             <div class="row">
 
                 <div class="col-lg-4 col-md-6">
                     <div class="box">
-                        <h3>Free</h3>
+                        <h3>Free plan</h3>
                         <h4><sup>$</sup>0<span> month</span></h4>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bi bi-check-circle"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bi bi-check-circle"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bi bi-check-circle"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bi bi-check-circle"></i> Massa ultricies mi quis hendrerit</li>
+                            <li><i class="bi bi-check-circle"></i> Event creating</li>
+                            <li><i class="bi bi-x-circle"></i> No chat</li>
+                            <li><i class="bi bi-x-circle"></i> 10 members</li>
+                            <li><i class="bi bi-x-circle"></i> No attendance</li>
+                            <li><i class="bi bi-x-circle"></i> No web app</li>
+                            <li><i class="bi bi-x-circle"></i>One team</li>
+
                         </ul>
                         <a href="#" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
 
+
                 <div class="col-lg-4 col-md-6">
                     <div class="box featured">
-                        <h3>Business</h3>
-                        <h4><sup>$</sup>29<span> month</span></h4>
+                        <h3>Coach plan</h3>
+                        <h4><sup>$</sup>85<span> month</span></h4>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bi bi-check-circle"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bi bi-check-circle"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bi bi-check-circle"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bi bi-check-circle"></i> Massa ultricies mi quis hendrerit</li>
+                            <li><i class="bi bi-check-circle"></i> Chat</li>
+                            <li><i class="bi bi-check-circle"></i> Attendance tracking</li>
+                            <li><i class="bi bi-check-circle"></i> web app</li>
+                            <li><i class="bi bi-x-circle"></i> only 20 members</li>
+                            <li><i class="bi bi-x-circle"></i> No complete team statisctics</li>
+                            <li><i class="bi bi-x-circle"></i> One team</li>
+
+
                         </ul>
                         <a href="#" class="get-started-btn">Get Started</a>
                     </div>
@@ -425,14 +492,16 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="box">
-                        <h3>Developer</h3>
-                        <h4><sup>$</sup>49<span> month</span></h4>
+                        <h3>Premium plan</h3>
+                        <h4><sup>$</sup>250<span> month</span></h4>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bi bi-check-circle"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bi bi-check-circle"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bi bi-check-circle"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bi bi-check-circle"></i> Massa ultricies mi quis hendrerit</li>
+                            <li><i class="bi bi-check-circle"></i> Chat</li>
+                            <li><i class="bi bi-check-circle"></i> Attendance tracking</li>
+                            <li><i class="bi bi-check-circle"></i> complete team statisctics</li>
+                            <li><i class="bi bi-check-circle"></i> web app</li>
+                            <li><i class="bi bi-check-circle"></i> Possiblity to create more teams</li>
+                            <li><i class="bi bi-check-circle"></i> complete team statisctics</li>
+
                         </ul>
                         <a href="#" class="get-started-btn">Get Started</a>
                     </div>
@@ -449,90 +518,80 @@
             <div class="section-header">
                 <h3 class="section-title">Frequently Asked Questions</h3>
                 <span class="section-divider"></span>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque</p>
+                <p class="section-description">Here are some frequently asked questions that users may have about the
+                    football team management application</p>
             </div>
 
             <ul class="faq-list">
 
                 <li>
-                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at
-                        lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What devices is the football
+                        team management application compatible with? <i class="bi bi-chevron-down icon-show"></i><i
                             class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                            curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                        </p>
+                            The web application is compatible with most web browsers, while the Android app is
+                            compatible with Android devices. </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius
-                        morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">How do I create an account
+                        for the football team management application? <i class="bi bi-chevron-down icon-show"></i><i
                             class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                            Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
-                            tincidunt dui.
+                            You can create an account by visiting our website or downloading the Android app and
+                            following the prompts to sign up.
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur
-                        adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Can multiple users access the
+                        same team account?
+                        <i class="bi bi-chevron-down icon-show"></i><i
                             class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq3" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                            elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                            pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at
-                            elementum eu facilisis sed odio morbi quis
+                            Yes, multiple users can access the same team account with different levels of access
+                            (coaches, players, team managers).
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus.
-                        Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Can I customize the team's
+                        calendar?<i class="bi bi-chevron-down icon-show"></i><i
                             class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq4" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                            Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
-                            tincidunt dui.
+                            Yes, you can customize the team's calendar by adding or removing events and setting
+                            reminders.
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec
-                        nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">How do I communicate with my
+                        team members through the app? <i class="bi bi-chevron-down icon-show"></i><i
                             class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq5" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                            ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                            bibendum est. Purus gravida quis blandit turpis cursus in
+                            You can communicate with team members through the chat feature, which is available on both
+                            the web application and the Android app.
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus
-                        ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i
+                    <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">How do I track attendance for
+                        my team members? <i
                             class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq6" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer
-                            malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem
-                            dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat
-                            commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non
-                            blandit massa enim nec.
+                            You can track attendance by marking team members as present, absent, or late in the
+                            attendance tracking feature.
                         </p>
                     </div>
                 </li>
@@ -546,17 +605,16 @@
     <section id="team" class="section-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h3 class="section-title">Our Team</h3>
+                <h3 class="section-title">The Team</h3>
                 <span class="section-divider"></span>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque</p>
+
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="member">
-                        <div class="pic"><img src="assets/img/team/team-1.jpg" alt=""></div>
-                        <h4>Walter White</h4>
-                        <span>Chief Executive Officer</span>
+                        <div class="pic"><img src="https://firebasestorage.googleapis.com/v0/b/foottricks-5a2f5.appspot.com/o/profile.png?alt=media&token=51f4ddbd-c439-4f10-b754-551d6b6b10ab" alt=""></div>
+                        <h4>Kallouch Yassin</h4>
+                        <span>Developer</span>
                         <div class="social">
                             <a href=""><i class="bi bi-twitter"></i></a>
                             <a href=""><i class="bi bi-facebook"></i></a>
@@ -566,47 +624,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                        <div class="pic"><img src="assets/img/team/team-2.jpg" alt=""></div>
-                        <h4>Sarah Jhinson</h4>
-                        <span>Product Manager</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                        <div class="pic"><img src="assets/img/team/team-3.jpg" alt=""></div>
-                        <h4>William Anderson</h4>
-                        <span>CTO</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="member">
-                        <div class="pic"><img src="assets/img/team/team-4.jpg" alt=""></div>
-                        <h4>Amanda Jepson</h4>
-                        <span>Accountant</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Kreait\Firebase\Auth as FirebaseAuth;
 use Kreait\Firebase\Auth\SignInResult\SignInResult;
+use Kreait\Firebase\Database;
 use Kreait\Firebase\Exception\FirebaseException;
 use Illuminate\Validation\ValidationException;
 
@@ -43,23 +44,35 @@ class LoginController extends Controller
      *
      * @return void
      */
-     public function __construct(FirebaseAuth $auth) {
+    protected $database;
+
+    public function __construct(FirebaseAuth $auth, Database $database) {
        $this->middleware('guest')->except('logout');
-       $this->auth = $auth;
+        $this->database = $database;
+
+        $this->auth = $auth;
     }
  protected function login(Request $request) {
        try {
           $signInResult = $this->auth->signInWithEmailAndPassword($request['email'], $request['password']);
           $user = new User($signInResult->data());
-
+           $loginuid = $signInResult->firebaseUserId();
+           $userData = $this->database->getReference('users/'.$loginuid)->getValue();
           //uid Session
-          $loginuid = $signInResult->firebaseUserId();
+
+           if ($userData['role']=='player')
+           {
+               throw ValidationException::withMessages([$this->username() => ['Your must are the coach of the team'],]);
+
+
+           }
           Session::put('uid',$loginuid);
 
           $result = Auth::login($user);
           return redirect($this->redirectPath());
        } catch (FirebaseException $e) {
           throw ValidationException::withMessages([$this->username() => [trans('auth.failed')],]);
+
        }
     }
     public function username() {

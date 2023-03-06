@@ -4,3 +4,8 @@
 
 Uses Composer for laravel installation. Get Composer [here](https://getcomposer.org/download/).
 
+## Some tips if necessary
+ - remove .idea
+ - rename .env
+
+

@@ -31,7 +31,7 @@
                 <img src="{{ $user2['imageUri'] }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="../home/profile" class="d-block">{{ $user2['firstname'] }} {{ $user2['lastname'] }}</a>
+                <a href="/home/profile" class="d-block">{{ $user2['firstname'] }} {{ $user2['lastname'] }}</a>
             </div>
         </div>
 

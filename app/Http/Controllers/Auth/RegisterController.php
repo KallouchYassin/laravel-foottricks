@@ -107,7 +107,7 @@ class RegisterController extends Controller
                 'team_name' => $request->input('teamname'),
                 'league' => $request->input('league'),
                 'uuid' => $uuid,
-                'team_coach' => $user['email'],
+                'team_coach' => $user->displayName,
                 'team_imageUri' => '0',
                 'team_goals' => '0',
                 'team_points' => '0',

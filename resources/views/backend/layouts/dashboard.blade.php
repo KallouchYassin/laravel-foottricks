@@ -161,11 +161,10 @@
                     <div class="col-md-6">
                         <!-- USERS LIST -->
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Convocated</h3>
+                            <div class="card-header border-transparent">
+                                <h3 class="card-title">Player stats</h3>
 
                                 <div class="card-tools">
-                                    <span class="badge badge-danger">{{sizeof($matchesList)}}</span>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
                                     </button>
@@ -175,11 +174,41 @@
                                 </div>
                             </div>
                             <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table m-0">
+                                        <thead>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>red</th>
+                                            <th>yellow</th>
+                                            <th>fouls</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
+                                        <tr>
+                                            <td><a href="#">Yassin Kallouch</a></td>
+                                            <td>4</td>
+                                            <td>0</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#00a65a" data-height="20">
+                                                    5
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
                             <!-- /.card-body -->
 
                             <!-- /.card-footer -->
                         </div>
+                        <!-- /.card -->
                         <!--/.card -->
                     </div>
                     <!-- /.col -->
@@ -187,55 +216,7 @@
                 <!-- /.row -->
 
                 <!-- TABLE: LATEST ORDERS -->
-                <div class="card">
-                    <div class="card-header border-transparent">
-                        <h3 class="card-title">Player stats</h3>
 
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table m-0">
-                                <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>red</th>
-                                    <th>yellow</th>
-                                    <th>fouls</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                <tr>
-                                    <td><a href="#">Yassin Kallouch</a></td>
-                                    <td>4</td>
-                                    <td>0</span></td>
-                                    <td>
-                                        <div class="sparkbar" data-color="#00a65a" data-height="20">
-                                            5
-                                        </div>
-                                    </td>
-                                </tr>
-
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.table-responsive -->
-                    </div>
-                    <!-- /.card-body -->
-
-                    <!-- /.card-footer -->
-                </div>
-                <!-- /.card -->
             </div>
             <!-- /.col -->
 

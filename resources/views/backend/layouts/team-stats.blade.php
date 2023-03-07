@@ -7,7 +7,7 @@
         background-color: white !important;;
     }
     .content{
-        margin: 50px;
+        margin: 150px 50px;
     }
 </style>
 

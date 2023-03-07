@@ -98,7 +98,7 @@
     <div class="card card-temps card-widget widget-user">
         <!-- Add the bg color to the header using any of the bg-* classes -->
         <div class="widget-user-header bg-info">
-            <h2 class="widget-user-username">{{$match['teamId']}} VS {{$match['opponent']}}</h2>
+            <h2 class="widget-user-username">{{$match['team_name']}} VS {{$match['opponent']}}</h2>
 
             <h4 class="widget-user-desc">Match of
                 {{$match['begin_date']['day']}}/{{$match['begin_date']['month']}}/{{$match['begin_date']['year']}}</h4>
